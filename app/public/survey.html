@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Friend Finder Survey</title>
+    <!--linking Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .jumbotron {
+            margin-top: 30px;
+            background-color: #fff;
+            border: 2px solid #5bc0de;
+        }
+        
+        .soft {
+            -moz-border-radius: 6px;
+            -webkit-border-radius: 6px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h2 class="text-center"><span class="glyphicon glyphicon-list"></span> Survey Questions</h2>
+            <hr>
+            <div class="form-group">
+                <h3><strong>About You</strong></h3>
+                <label>Name (required)</label>
+                <input type="text" name="" id="name" class="form-control" required>
+                <br>
+                <label>Link to Photo Image (required)</label>
+                <input type="text" name="" id="photo" class="form-control" required>
+            </div>
+            <!--form-group-->
+            <hr>
+            <div class="form-group">
+                <h3><strong>Question 1</strong></h3>
+                <h4>I would rather live alone than to have a roommate.</h4>
+                <select data-placeholder="" class="chosen-select soft" id="q1">
+			 		<option value=""></option>
+		            <option value="1">1 (Strongly Disagree)</option>
+		            <option value="2">2</option>
+		            <option value="3">3</option>
+		            <option value="4">4</option>
+		            <option value="5">5 (Strongly Agree)</option>
+		      	</select>
+            </div>
+            <!--form-group-->
+            <div class="form-group">
+                <h3><strong>Question 2</strong></h3>
+                <h4>I prefer cooking at home over eating out.</h4>
+                <select data-placeholder="" class="chosen-select soft" id="q2">
+			 		<option value=""></option>
+		            <option value="1">1 (Strongly Disagree)</option>
+		            <option value="2">2</option>
+		            <option value="3">3</option>
+		            <option value="4">4</option>
+		            <option value="5">5 (Strongly Agree)</option>
+		      	</select>
+            </div>
+            <!--form-group-->
+            <div class="form-group">
+                <h3><strong>Question 3</strong></h3>
+                <h4>I cannot function without my cellphone.</h4>
+                <select data-placeholder="" class="chosen-select soft" id="q3">
+			 		<option value=""></option>
+		            <option value="1">1 (Strongly Disagree)</option>
+		            <option value="2">2</option>
+		            <option value="3">3</option>
+		            <option value="4">4</option>
+		            <option value="5">5 (Strongly Agree)</option>
+		      	</select>
+            </div>
+            <!--form-group-->
+            <div class="form-group">
+                <h3><strong>Question 4</strong></h3>
+                <h4>Social media is the devil.</h4>
+                <select data-placeholder="" class="chosen-select soft" id="q4">
+			 		<option value=""></option>
+		            <option value="1">1 (Strongly Disagree)</option>
+		            <option value="2">2</option>
+		            <option value="3">3</option>
+		            <option value="4">4</option>
+		            <option value="5">5 (Strongly Agree)</option>
+		      	</select>
+            </div>
+            <!--form-group-->
+            <div class="form-group">
+                <h3><strong>Question 5</strong></h3>
+                <h4>I don't like planning. I prefer being spontaneous.</h4>
+                <select data-placeholder="" class="chosen-select soft" id="q5">
+			 		<option value=""></option>
+		            <option value="1">1 (Strongly Disagree)</option>
+		            <option value="2">2</option>
+		            <option value="3">3</option>
+		            <option value="4">4</option>
+		            <option value="5">5 (Strongly Agree)</option>
+		      	</select>
+            </div>
+            <!--form-group-->
+            <div class="form-group">
+                <h3><strong>Question 6</strong></h3>
+                <h4>My desk is always super organized.</h4>
+                <select data-placeholder="" class="chosen-select soft" id="q6">
+			 		<option value=""></option>
+		            <option value="1">1 (Strongly Disagree)</option>
+		            <option value="2">2</option>
+		            <option value="3">3</option>
+		            <option value="4">4</option>
+		            <option value="5">5 (Strongly Agree)</option>
+		      	</select>
+            </div>
+            <!--form-group-->
+            <div class="form-group">
+                <h3><strong>Question 7</strong></h3>
+                <h4>I love going to parties where I don't know anybody.</h4>
+                <select data-placeholder="" class="chosen-select soft" id="q7">
+			 		<option value=""></option>
+		            <option value="1">1 (Strongly Disagree)</option>
+		            <option value="2">2</option>
+		            <option value="3">3</option>
+		            <option value="4">4</option>
+		            <option value="5">5 (Strongly Agree)</option>
+		      	</select>
+            </div>
+            <!--form-group-->
+            <div class="form-group">
+                <h3><strong>Question 8</strong></h3>
+                <h4>My friends would describe me as reserved.</h4>
+                <select data-placeholder="" class="chosen-select soft" id="q8">
+			 		<option value=""></option>
+		            <option value="1">1 (Strongly Disagree)</option>
+		            <option value="2">2</option>
+		            <option value="3">3</option>
+		            <option value="4">4</option>
+		            <option value="5">5 (Strongly Agree)</option>
+		      	</select>
+            </div>
+            <!--form-group-->
+            <div class="form-group">
+                <h3><strong>Question 9</strong></h3>
+                <h4>At work, I follow all the rules and never make waves.</h4>
+                <select data-placeholder="" class="chosen-select soft" id="q9">
+			 		<option value=""></option>
+		            <option value="1">1 (Strongly Disagree)</option>
+		            <option value="2">2</option>
+		            <option value="3">3</option>
+		            <option value="4">4</option>
+		            <option value="5">5 (Strongly Agree)</option>
+		      	</select>
+            </div>
+            <!--form-group-->
+            <div class="form-group">
+                <h3><strong>Question 10</strong></h3>
+                <h4>I'm not big on animals and don't understand why people have pets.</h4>
+                <select data-placeholder="" class="chosen-select soft" id="q10">
+			 		<option value=""></option>
+		            <option value="1">1 (Strongly Disagree)</option>
+		            <option value="2">2</option>
+		            <option value="3">3</option>
+		            <option value="4">4</option>
+		            <option value="5">5 (Strongly Agree)</option>
+		      	</select>
+            </div>
+            <!--form-group-->
+            <button type="button" class="btn btn-info btn-block"><span class="glyphicon glyphicon-user"></span> Find a Friend</button>
+        </div>
+        <!--jumbotron-->
+    </div>
+    <!--container-->
+</body>
+
+</html>
