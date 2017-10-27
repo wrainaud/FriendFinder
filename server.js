@@ -1,41 +1,21 @@
-// Require Express, Path, and Bodyparser
-var express = require('express');
-var path = require('path');
-var bodyParser = require('body-parser');
+//Set ups dependency packages
+var express = require("express");
+var bodyParser = require("body-parser");
+var path = require("path");
 
-// Require index and user routes
-var index = require('./routes/index');
-var users = require('./routes/users');
-
+//Create an express server
 var app = express();
+var PORT = process.env.PORT || 3000;
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-
+//Sets up the Express app to handle data parsing
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(express.static(path.join(__dirname, 'public')));
+//Routes
+require("./app/routing/apiRoutes.js")(app);
+require("./app/routing/htmlRoutes.js")(app);
 
-app.use('/', index);
-app.use('/users', users);
-
-// 404 error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+//Listener
+app.listen(PORT, function() {
+    console.log("App listening on PORT: " + PORT);
 });
-
-// DEV error handler
-app.use(function(err, req, res, next) {
-
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  res.status(err.status || 500);
-  res.render('error');
-});
-
-module.exports = app;
