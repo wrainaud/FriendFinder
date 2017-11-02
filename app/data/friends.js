@@ -1,6 +1,6 @@
 // Friends Data
 
-var friendsArray = [
+var friends = [
         {
         "name": "Bush",
         "photo": "https://instagram.fewr1-4.fna.fbcdn.net/t51.2885-15/e35/11909337_1613042448957164_947845166_n.jpg",
@@ -52,5 +52,3 @@ var friendsArray = [
         "scores": [1,2,3,4,5,1,2,3,4,5]
        }
 ];
-
-module.exports = friendsArray;
