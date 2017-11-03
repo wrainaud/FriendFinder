@@ -13,7 +13,7 @@ module.exports = function() {
     }
 
     // Capture the form inputs 
-    $("#submit").on("click", function(){
+    $("#submit").on("submit", function(){
 
     	// Form validation
     	function validateForm() {
@@ -64,7 +64,6 @@ module.exports = function() {
                 $("#match-image").attr("src", data.photo);
                 $("#match-image").attr("width", "300px");
                 
-
 		    	// Show the modal with the best match 
                 $("#friends-results-modal").modal("toggle");
 
