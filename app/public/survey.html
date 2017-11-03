@@ -5,16 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <title>Friend Finder Survey</title>
+
+    <!-- CSS & JS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+    <!-- Theme -->
     <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
+
+    <!-- Chosen -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+
     <style>
-        .jumbotron{
+        .jumbotron {
             margin-top: 30px;
         }
-        .modal{
+        .modal {
             position: absolute;
             z-index: 1000;
+        }
+        .lynx {
+            float: right;
         }
     </style>
 </head>
@@ -40,7 +57,7 @@
             <div class="form-group">
                 <h3><strong>Question 1</strong></h3>
                 <h4>You often spend time exploring unrealistic and impractical yet intriguing ideas.</h4>
-                <select data-placeholder="" class="chosen-select soft" id="question1">
+                <select data-placeholder="" class="chosen-select" id="question1">
 			 		<option value=""></option>
 		            <option value="1">1 (Strongly Disagree)</option>
 		            <option value="2">2</option>
@@ -53,7 +70,7 @@
             <div class="form-group">
                 <h3><strong>Question 2</strong></h3>
                 <h4>You often contemplate the reasons for human existence.</h4>
-                <select data-placeholder="" class="chosen-select soft" id="question2">
+                <select data-placeholder="" class="chosen-select" id="question2">
 			 		<option value=""></option>
 		            <option value="1">1 (Strongly Disagree)</option>
 		            <option value="2">2</option>
@@ -66,7 +83,7 @@
             <div class="form-group">
                 <h3><strong>Question 3</strong></h3>
                 <h4>You often get so lost in thoughts that you ignore or forget your surroundings.</h4>
-                <select data-placeholder="" class="chosen-select soft" id="question3">
+                <select data-placeholder="" class="chosen-select" id="question3">
 			 		<option value=""></option>
 		            <option value="1">1 (Strongly Disagree)</option>
 		            <option value="2">2</option>
@@ -79,7 +96,7 @@
             <div class="form-group">
                 <h3><strong>Question 4</strong></h3>
                 <h4>You rarely do something just out of sheer curiosity.</h4>
-                <select data-placeholder="" class="chosen-select soft" id="question4">
+                <select data-placeholder="" class="chosen-select" id="question4">
 			 		<option value=""></option>
 		            <option value="1">1 (Strongly Disagree)</option>
 		            <option value="2">2</option>
@@ -92,7 +109,7 @@
             <div class="form-group">
                 <h3><strong>Question 5</strong></h3>
                 <h4>Being organized is more important to you than being adaptable.</h4>
-                <select data-placeholder="" class="chosen-select soft" id="question5">
+                <select data-placeholder="" class="chosen-select" id="question5">
 			 		<option value=""></option>
 		            <option value="1">1 (Strongly Disagree)</option>
 		            <option value="2">2</option>
@@ -105,7 +122,7 @@
             <div class="form-group">
                 <h3><strong>Question 6</strong></h3>
                 <h4>You do not mind being at the center of attention.</h4>
-                <select data-placeholder="" class="chosen-select soft" id="question6">
+                <select data-placeholder="" class="chosen-select" id="question6">
 			 		<option value=""></option>
 		            <option value="1">1 (Strongly Disagree)</option>
 		            <option value="2">2</option>
@@ -118,7 +135,7 @@
             <div class="form-group">
                 <h3><strong>Question 7</strong></h3>
                 <h4>You consider yourself more practical than creative.</h4>
-                <select data-placeholder="" class="chosen-select soft" id="question7">
+                <select data-placeholder="" class="chosen-select" id="question7">
 			 		<option value=""></option>
 		            <option value="1">1 (Strongly Disagree)</option>
 		            <option value="2">2</option>
@@ -131,7 +148,7 @@
             <div class="form-group">
                 <h3><strong>Question 8</strong></h3>
                 <h4>It is often difficult for you to relate to other people’s feelings.</h4>
-                <select data-placeholder="" class="chosen-select soft" id="q8">
+                <select data-placeholder="" class="chosen-select" id="question8">
 			 		<option value=""></option>
 		            <option value="1">1 (Strongly Disagree)</option>
 		            <option value="2">2</option>
@@ -144,7 +161,7 @@
             <div class="form-group">
                 <h3><strong>Question 9</strong></h3>
                 <h4>An interesting book or a video game is often better than a social event.</h4>
-                <select data-placeholder="" class="chosen-select soft" id="question9">
+                <select data-placeholder="" class="chosen-select" id="question9">
 			 		<option value=""></option>
 		            <option value="1">1 (Strongly Disagree)</option>
 		            <option value="2">2</option>
@@ -157,7 +174,7 @@
             <div class="form-group">
                 <h3><strong>Question 10</strong></h3>
                 <h4>Logic is usually more important than heart when it comes to making important decisions.</h4>
-                <select data-placeholder="" class="chosen-select soft" id="question10">
+                <select data-placeholder="" class="chosen-select" id="question10">
 			 		<option value=""></option>
 		            <option value="1">1 (Strongly Disagree)</option>
 		            <option value="2">2</option>
@@ -166,24 +183,20 @@
 		            <option value="5">5 (Strongly Agree)</option>
 		      	</select>
             </div>
-            <button type="submit" class="btn btn-warning btn-block submit"><i class="fa fa-telegram"></i> Find a Friend </button>
+            <button type="submit" class="btn btn-warning btn-block" id="submit"><i class="fa fa-telegram"></i> Find a Friend </button>
         </div>
     </div>
 
-    <div class="container">
-        <i class="fa fa-american-sign-language-interpreting">
-            <a href="./api/friends"></a>
-        </i> |
-        <i class="fa fa-github">
-            <a href="https://github.com/wrainaud/FriendFinder"></a>
-        </i> |
-        <i class="fa fa-address-card-o">
-            <a href="http://wrainaud.com/"></a>
-        </i>
-    </div>
-
     <nav class="navbar sticky-bottom navbar-dark bg-dark bottom-bar">
-        <a class="navbar-brand"><i class="fa fa-copyright"></i> William Rainaud</a>
+        <a class="navbar-brand" href="http://wrainaud.com/"><i class="fa fa-copyright"></i> William Rainaud</a>
+   
+    <div class="container lynx">
+        <a href="./api/friends"><i class="fa fa-american-sign-language-interpreting"></i></a> |
+        <a href="https://github.com/wrainaud/FriendFinder"><i class="fa fa-github"></i></a> |
+        <a href="http://wrainaud.com/"><i class="fa fa-address-card-o"></i></a>
+    </div>
+    
+    
     </nav>
 
     <!-- Modal -->
@@ -202,54 +215,13 @@
                     <img id="match-image" src="" alt=""></img>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-warning btn-lg" data-dismiss="modal" id="close-btn">Close</button>
+                    <button type="button" class="btn btn-warning btn-lg" data-dismiss="modal">Close</button>
                 </div>
             </div>
-    
         </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-        crossorigin="anonymous"></script>
     
-    <script>
-
-        $(".submit").on("submit", function (event) {
-            event.preventDefault();
-            // hold user totals
-            var totalsArr = [];
-            // user data object
-            var newFriend = {
-                name: $("#user-name").val(),
-                photo: $("#profile-photo").val(),
-                scores: [$("#question1").val(),
-                         $("#question2").val(), 
-                         $("#question3").val(), 
-                         $("#question4").val(), 
-                         $("#question5").val(), 
-                         $("#question6").val(), 
-                         $("#question7").val(), 
-                         $("#question8").val(), 
-                         $("#question9").val(), 
-                         $("#question10").val()]
-            };
-            console.log(newFriend);
-            //AJAX post the form data to the friends.js API 
-            $.post("/api/friends", newFriend,
-                function (data) {
-
-                    $("#match-name").text(data.name);
-                    $("#match-image").attr("src", data.photo);
-                    $("#match-image").attr("width", "300px");
-                    $("#friends-results-modal").modal("toggle");
-                });
-        });
-
-
-    </script>
+    <script type="text/javascript" href="./modal-init"></script>
 </body>
 
 </html>

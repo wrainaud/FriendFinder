@@ -35,25 +35,38 @@ module.exports = function() {
 		if (validateForm() == true)
 		{
 			// Create an object for the user's data
-	    	var userData = {
-	    		name: $("#name").val(),
-	    		photo: $("#photo").val(),
-	    		scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ]
-	    	}
+            var newFriend = {
+                name: $("#user-name").val(),
+                photo: $("#profile-photo").val(),
+                scores: [
+                    $("#question1").val(),
+                    $("#question2").val(),
+                    $("#question3").val(),
+                    $("#question4").val(),
+                    $("#question5").val(),
+                    $("#question6").val(),
+                    $("#question7").val(),
+                    $("#question8").val(),
+                    $("#question9").val(),
+                    $("#question10").val()
+                ]
+            };
 
 
 	    	// Grab the URL of the website
 	    	var currentURL = window.location.origin;
 
 	    	// AJAX post the data to the friends API. 
-	    	$.post(currentURL + "/api/friends", userData, function(data){
+            $.post(currentURL + "/api/friends", newFriend, function(data){
 
 	    		// Grab the result from the AJAX post so that the best match's name and photo are displayed.
-	    		$("#matchName").text(data.name);
-	    		$('#matchImg').attr("src", data.photo);
+                $("#match-name").text(data.name);
+                $("#match-image").attr("src", data.photo);
+                $("#match-image").attr("width", "300px");
+                
 
 		    	// Show the modal with the best match 
-		    	$("#resultsModal").modal('toggle');
+                $("#friends-results-modal").modal("toggle");
 
 	    	});
 		}
