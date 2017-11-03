@@ -1,4 +1,30 @@
 {
+<<<<<<< HEAD
+  "name": "FriendFinder",
+  "version": "1.0.0",
+  "description": "a compatibility-based \"FriendFinder\" application -- basically a dating app.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wrainaud/FriendFinder.git"
+  },
+  "keywords": [],
+  "author": "Created by William Rainaud - email: wrainaud@outlook.com - web: http://wrainaud.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wrainaud/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/wrainaud/FriendFinder#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}
+=======
     "name": "FriendFinder",
     "version": "1.0.0",
     "description": "a compatibility-based \"FriendFinder\" application -- basically a dating app.",
@@ -26,3 +52,4 @@
         "express": "^4.16.2"
     }
 }
+>>>>>>> 64e7da6308eddb7a4366c4b04875c2c1cc3baa1b
