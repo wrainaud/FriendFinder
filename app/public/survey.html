@@ -6,10 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <title>Friend Finder Survey</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <link rel="stylesheet" href="styles.css"> -->
     <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
+    <style>
+        .jumbotron{
+            margin-top: 30px;
+        }
+        .modal{
+            position: absolute;
+            z-index: 1000;
+        }
+    </style>
 </head>
 
 <body>
@@ -162,6 +169,19 @@
             <button type="submit" class="btn btn-warning btn-block submit"><i class="fa fa-telegram"></i> Find a Friend </button>
         </div>
     </div>
+
+    <div class="container">
+        <i class="fa fa-american-sign-language-interpreting">
+            <a href="./api/friends"></a>
+        </i> |
+        <i class="fa fa-github">
+            <a href="https://github.com/wrainaud/FriendFinder"></a>
+        </i> |
+        <i class="fa fa-address-card-o">
+            <a href="http://wrainaud.com/"></a>
+        </i>
+    </div>
+
     <nav class="navbar sticky-bottom navbar-dark bg-dark bottom-bar">
         <a class="navbar-brand"><i class="fa fa-copyright"></i> William Rainaud</a>
     </nav>
@@ -197,7 +217,7 @@
     
     <script>
 
-        $(".submit").on("click", function (event) {
+        $(".submit").on("submit", function (event) {
             event.preventDefault();
             // hold user totals
             var totalsArr = [];
