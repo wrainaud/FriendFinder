@@ -1,5 +1,4 @@
 //Set dependent packages
-var path = require("path");
 var friends = require("../data/friends.js");
 
 //Routes
@@ -7,7 +6,7 @@ module.exports = function(app) {
 
     //create an api.get route to display JSON of all possible friends
     app.get("/api/friends", function(req, res) {
-        res.JSON(friends);
+        res.json(friends);
         //console.log(friends);
     });
 
@@ -15,42 +14,36 @@ module.exports = function(app) {
     //handle compatibility logic here
     app.post("/api/friends", function(req, res) {
 
-        var newSurvey = req.body;
+        var newFriend = {
+            name: "",
+            photo: "",
+            friendDifference: 1000
+        };
 
-        var newFriendArray = [];
+        var userData = req.body;
+        var userScores = req.body.scores;
+        var totalDifference = 0;
 
-        for (var i = 0; i < friends.length; i++) {
-            var scoreDifference = 0;
+        console.log("userScores:" + userScores);
 
-            for (var k = 0; k < friends[i].scores.length; k++) {
-                var difference = Math.abs(friends[i].scores[k] - newSurvey.scores[k]);
-                scoreDifference += difference;
-            }
+        for (i = 0; i < friends.length; i++) {
+            totalDifference = 0;
 
-            newFriendArray.push({
-                name: friends[i].name,
-                picture: friends[i].picture,
-                totalDiff: scoreDifference,
-            });
-        }
+            for (j = 0; j < friends[i].scores[i]; j++) {
 
-        var highestScore = 50;
+                totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friends[i].scores[j]));
 
-        for (var i = 0; i < newFriendArray.length; i++) {
-            if (newFriendArray[i].totalDiff < highestScore) {
-                highestScore = newFriendArray[i].totalDiff;
-            }
-        }
-
-        var pickedFriend = {};
-
-        for (var i = 0; i < newFriendArray.length; i++) {
-            if (newFriendArray[i].totalDiff === highestScore) {
-                pickedFriend = newFriendArray[i];
+                if (totalDifference <= newFriend.friendDifference) {
+                    newFriend.name = friends[i].name;
+                    newFriend.photo = friends[i].photo;
+                    newFriend.friendDifference = totalDifference;
+                }
             }
         }
-        res.JSON(pickedFriend);
-        console.log(pickedFriend);
+
+
+        friends.push(userData);
+        res.json(newFriend);
+
     });
-
-};
+} 
