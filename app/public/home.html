@@ -1,21 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Friend Finder</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One');
+            html{
+                position: relative;
+                min-height: 100%;
+            }
+            body {
+                font-family: 'Alfa Slab One', cursive;
+                background: #c94b4b;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right, #4b134f, #c94b4b);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right, #4b134f, #c94b4b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                margin-bottom: 60px;
+            }
+            .header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            background-color: #303030;
+            }
+            .container-fluid{
+                margin-top: -2px;
+            }            
+            .jumbotron {
+                margin-top: 125px;
+            }
+            .icon {
+                margin-right: 5px;
+                padding: 3px;
+                color: #eee;
+                text-align: right;
+            }
+            .icons {
+                float: right;
+                margin-top: 5px;
+            }
+            .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            background-color: #303030;
+            }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-    <title>Friend Finder</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/styles.css" media="screen" title="no title">
+            body > .container-fluid {
+            padding: 60px 15px 0;
+            }
+
+            .footer > .container-fluid {
+            padding-right: 15px;
+            padding-left: 15px;
+            }
+
+            code {
+            font-size: 80%;
+            }
+        </style>
 </head>
 <body>
-    <nav class="sticky-top navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="https://friendfinder-wjr3.herokuapp.com/">  Friend Finder</a>
+    <header class="header">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./">
+                Friend Finder
+            </a>
         </div>
-    </nav>
+    </header>
 
     <div class="container">
         <div class="jumbotron">
@@ -24,15 +83,15 @@
             <h2>Take the survey</h2>
             <h2>Find you some new friends child</h2>
             <a href="./survey">
-                <button type="button" class="btn btn-warning">
+                <button type="button" class="btn btn-warning icons">
                     <i class="fa fa-address-card"></i> Go to Survey 
                 </button>
             </a>
         </div>
     </div>
 
-    <nav class="sticky-bottom navbar-dark bg-dark bottom-bar">
-        <div class="container">
+    <footer class="footer">
+        <div class="container-fluid">
             <a class="navbar-brand" href="http://wrainaud.com/">
                 <i class="fa fa-copyright fa-lg"></i> William Rainaud
             </a>
@@ -48,9 +107,14 @@
                 </a>
             </div>
         </div>
-    </nav>
+    </footer>
    
-
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
