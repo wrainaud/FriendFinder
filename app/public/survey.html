@@ -1,22 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Friend Finder Survey</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/styles.css" media="screen" title="no title">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One');
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+    
+        body {
+            font-family: 'Alfa Slab One', cursive;
+            background: #c94b4b;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #4b134f, #c94b4b);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #4b134f, #c94b4b);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            margin-bottom: 60px;
+        }
+    
+        .header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            background-color: #303030;
+        }
+        .modal{
+            position: absolute;
+            z-index: 1000;
+        }
+    
+        .container-fluid {
+            margin-top: -2px;
+        }
+    
+        .jumbotron {
+            margin-top: 125px;
+        }
+    
+        .icon {
+            margin-right: 5px;
+            padding: 3px;
+            color: #eee;
+            text-align: right;
+        }
+    
+        .icons {
+            float: right;
+            margin-top: 5px;
+        }
+    
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            background-color: #303030;
+        }
+    
+        body>.container-fluid {
+            padding: 60px 15px 0;
+        }
+    
+        .footer>.container-fluid {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+    
+        code {
+            font-size: 80%;
+        }
+    </style>
 </head>
-
 <body>
-    <nav class="sticky-top navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="https://friendfinder-wjr3.herokuapp.com/"> Friend Finder</a>
+    <header class="header">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./">
+                Friend Finder
+            </a>
         </div>
-    </nav>
+    </header>
     <div class="container">
         <div class="jumbotron">
             <h2 class="text-center"><i class="fa fa-cubes"></i> Survey Questions </h2>
@@ -24,10 +96,10 @@
             <div class="form-group">
                 <h3><strong>About You</strong></h3>
                 <label>Name (required)</label>
-                <input type="text" name="" id="name" class="form-control" required>
+                <input type="text" name="" id="user-name" class="form-control" required>
                 <br>
                 <label>Link to Photo Image (required)</label>
-                <input type="text" name="" id="photo" class="form-control" required>
+                <input type="text" name="" id="profile-photo" class="form-control" required>
             </div>
             <!--Question 1-->
             <hr>
@@ -160,26 +232,28 @@
 		            <option value="5">5 (Strongly Agree)</option>
 		      	</select>
             </div>
-            <button type="submit" class="btn btn-warning btn-block" id="submit" data-toggle="modal" data-target="#friends-results-modal"><i class="fa fa-telegram"></i> Find a Friend </button>
+            <button type="submit" id="submit" class="btn btn-warning btn-block"  data-toggle="modal" data-target="#friends-results-modal"><i class="fa fa-telegram"></i> Find a Friend </button>
         </div>
     </div>
 
-    <nav class="sticky-bottom navbar-dark bg-dark bottom-bar">
-        <div class="container">
+    <footer class="footer">
+        <div class="container-fluid">
             <a class="navbar-brand" href="http://wrainaud.com/">
                 <i class="fa fa-copyright fa-lg"></i> William Rainaud
             </a>
-            <a class="icon" href="./api/friends">
-                <i class="fa fa-american-sign-language-interpreting fa-lg"></i>
-            </a>
-            <a class="icon" href="https://github.com/wrainaud/FriendFinder">
-                <i class="fa fa-github fa-lg"></i>
-            </a>
-            <a class="icon" href="http://wrainaud.com/">
-                <i class="fa fa-address-card-o fa-lg"></i>
-            </a>
+            <div class="icons">
+                <a class="icon" href="./api/friends">
+                    <i class="fa fa-american-sign-language-interpreting fa-lg"></i>
+                </a>
+                <a class="icon" href="https://github.com/wrainaud/FriendFinder">
+                    <i class="fa fa-github fa-lg"></i>
+                </a>
+                <a class="icon" href="http://wrainaud.com/">
+                    <i class="fa fa-address-card-o fa-lg"></i>
+                </a>
+            </div>
         </div>
-    </nav>
+    </footer>
 
     <!-- Modal -->
 
@@ -207,19 +281,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
-        var config = {
-            '.chosen-select': {},
-            '.chosen-select-deselect': { allow_single_deselect: true },
-            '.chosen-select-no-single': { disable_search_threshold: 10 },
-            '.chosen-select-no-results': { no_results_text: 'Oops, nothing found!' },
-            '.chosen-select-width': { width: "95%" }
-        }
-        for (var selector in config) {
-            $(selector).chosen(config[selector]);
-        }
-
         // Capture the form inputs 
-        $("#submit").on("submit", function () {
+        $("#submit").on("click", function (event) {
+            event.preventDefault(event);
 
             // Form validation
             function validateForm() {
@@ -257,6 +321,7 @@
                     ]
                 };
 
+                console.log(newFriend);
 
                 // Grab the URL of the website
                 var currentURL = window.location.origin;
@@ -270,7 +335,7 @@
                     $("#match-image").attr("width", "300px");
 
                     // Show the modal with the best match 
-                    $("#friends-results-modal").modal("open");
+                    $("#friends-results-modal").modal("toggle");
 
                 });
             }
